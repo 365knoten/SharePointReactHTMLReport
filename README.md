@@ -1,7 +1,8 @@
-# SharePoint HTML Report
+# SharePoint OneUp Report – Demo-Projekt
 
-Vite + React Projekt für die Erstellung von **Self-Contained SharePoint HTML-Reports**.
-Alle CSS und JavaScript werden inline in einer einzigen HTML-Datei gebündelt.
+Dieses Repository ist ein **Demo-Projekt / Projektstarter** für einen React-basierten **SharePoint OneUp Report**.
+
+Man kann hier in React einen Report erstellen, der dann als eine einzelne HTML-Datei erzeugt wird. Diese Datei kann anschließend in SharePoint als OneUp Report ausgeführt werden – alle CSS und JavaScript werden dabei inline in die HTML-Datei gebündelt, sodass keine externen Abhängigkeiten benötigt werden.
 
 ## Quick Start
 
@@ -15,13 +16,19 @@ npm run dev
 
 Der Dev-Server läuft auf `http://localhost:5173`
 
-## Build für SharePoint /_html
+## Build & Deployment als SharePoint OneUp Report
 
-```bash
-npm run build
-```
+1. Report-Inhalt in `src/App.tsx` (und ggf. `src/index.css`) anpassen.
+2. Build ausführen:
 
-**Resultat:** Eine einzelne `dist/index.html` mit inlinedem CSS und JavaScript – bereit für SharePoint /_html Upload!
+   ```bash
+   npm run build
+   ```
+
+   **Resultat:** Eine einzelne `dist/index.html` mit inlinedem CSS und JavaScript – bereit für den SharePoint-Upload!
+
+3. Die resultierende `index.html` aus dem `dist`-Ordner in eine beliebige Bibliothek in SharePoint hochladen.
+4. Die hochgeladene Datei in SharePoint öffnen – der Report läuft als OneUp Report direkt im Browser, ohne weitere externe Abhängigkeiten.
 
 ## Struktur
 
@@ -49,12 +56,4 @@ scripts/
 - 🎨 Modernes Styling mit CSS Grid
 - 🔧 TypeScript Support
 - 📦 **Single-File HTML Output** – alle CSS/JS inlined
-- 🚀 SharePoint /_html ready
-
-## Deployment zu SharePoint
-
-Nach `npm run build`:
-1. Öffne `dist/index.html` im Browser
-2. Kopiere den gesamten HTML-Code
-3. Füge ihn als HTML-Report in SharePoint /_html ein
-4. Fertig! Der Report lädt ohne externe Dependencies.
+- 🚀 SharePoint OneUp Report ready
