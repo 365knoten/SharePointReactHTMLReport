@@ -1,37 +1,12 @@
-import { useState } from 'react'
+import { ReportData } from './ReportData';
 
-interface ReportData {
-  title: string
-  description: string
-  sections: Array<{
-    id: string
-    heading: string
-    content: string
-  }>
+
+export interface AppProps {
+  reportData: ReportData;
 }
 
-export default function App() {
-  const [reportData] = useState<ReportData>({
-    title: 'SharePoint HTML Report',
-    description: 'Erstelle einen HTML-Report basierend auf SharePoint-Daten',
-    sections: [
-      {
-        id: 'section-1',
-        heading: 'Überblick',
-        content: 'Dies ist ein Beispiel-Report. Ersetze diesen Inhalt mit deinen echten Daten.',
-      },
-      {
-        id: 'section-2',
-        heading: 'Daten',
-        content: 'Hier können deine SharePoint-Daten angezeigt werden.',
-      },
-      {
-        id: 'section-3',
-        heading: 'Zusammenfassung',
-        content: 'Füge hier eine Zusammenfassung deiner Daten ein.',
-      },
-    ],
-  })
+export default function App(params: AppProps) {
+  const { reportData } = params;
 
   return (
     <div className="container">

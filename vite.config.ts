@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { sharepointDataPlugin } from './vite-plugins/sharepoint-data'
 
 export default defineConfig(({ mode }) => {
   const isDev = mode === 'development'
@@ -11,7 +12,7 @@ export default defineConfig(({ mode }) => {
       ),
       __LOCAL_SERVE__: JSON.stringify(isDev) // true in dev, false in prod
     },
-    plugins: [react()],
+    plugins: [sharepointDataPlugin(), react()],
     server: {
       port: 5173,
       open: true,
